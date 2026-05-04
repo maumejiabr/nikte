@@ -103,9 +103,9 @@
         <option value="otro">Otro</option>
       </select>
       <button type="submit" id="btn-submit">Quiero ser el primero →</button>
-      <div class="msg success" id="msg-success" style="display:none">Listo. Cuando sea el momento, serás el primero en saberlo.</div>
       <div class="msg error" id="msg-error" style="display:none">Algo salió mal. Intenta de nuevo.</div>
     </form>
+    <div class="msg success" id="msg-success" style="display:none; margin-top:1.2rem; text-align:center;">Listo. Cuando sea el momento, serás el primero en saberlo.</div>
   </div>
 
   <p class="footer-note">Tu información es confidencial · Solo para acceso anticipado</p>
@@ -150,7 +150,7 @@
     if (!nombre || !whatsapp || !email || !perfil) return;
     btn.disabled = true;
     btn.textContent = 'Enviando...';
-    ok.style.display = 'none';
+    // reset mensajes
     err.style.display = 'none';
     const ref = new URLSearchParams(window.location.search).get('ref') || 'directo';
     try {
